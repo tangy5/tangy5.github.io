@@ -4782,11 +4782,11 @@ a.label:focus {
   background-color: #286090;
 }
 .label-success {
-  background-color: #5cb85c;
+  background-color: #e0b16a;
 }
 .label-success[href]:hover,
 .label-success[href]:focus {
-  background-color: #449d44;
+  background-color: #e0b16a;
 }
 .label-info {
   background-color: #5bc0de;
@@ -5058,7 +5058,7 @@ a.thumbnail.active {
           animation: progress-bar-stripes 2s linear infinite;
 }
 .progress-bar-success {
-  background-color: #5cb85c;
+  background-color: #e0b16a;
 }
 .progress-striped .progress-bar-success {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
