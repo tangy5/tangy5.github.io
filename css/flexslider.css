@@ -90,7 +90,7 @@ html[xmlns] .slides {display: block;}
     text-indent: -9999px;
 }
 .flex-control-paging li a.flex-active { 
-	background:#44A790;
+	background:#e0b16a;
     cursor: default;
 }
 .flex-control-thumbs {margin: 5px 0 0; position: static; overflow: hidden;}
