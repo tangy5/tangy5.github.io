@@ -1,0 +1,165 @@
+{
+  "description": "Prostate transitional zone and peripheral zone segmentation", 
+  "labels": {
+    "0": "background", 
+    "1": "PZ", 
+    "2": "TZ"
+  }, 
+  "licence": "CC-BY-SA 4.0", 
+  "modality": {
+    "0": "T2", 
+    "1": "ADC"
+  }, 
+  "name": "PROSTATE", 
+  "numTest": 16, 
+  "numTraining": 30, 
+  "quantitative": [
+    0, 
+    1
+  ], 
+  "reference": "Radboud University, Nijmegen Medical Centre", 
+  "relase": "1.0 04/05/2018", 
+  "tensorImageSize": "4D", 
+  "test": [
+    "./imagesTs/prostate_08.nii", 
+    "./imagesTs/prostate_22.nii", 
+    "./imagesTs/prostate_30.nii", 
+    "./imagesTs/prostate_45.nii", 
+    "./imagesTs/prostate_26.nii", 
+    "./imagesTs/prostate_36.nii", 
+    "./imagesTs/prostate_12.nii", 
+    "./imagesTs/prostate_33.nii", 
+    "./imagesTs/prostate_09.nii", 
+    "./imagesTs/prostate_05.nii", 
+    "./imagesTs/prostate_23.nii", 
+    "./imagesTs/prostate_19.nii", 
+    "./imagesTs/prostate_15.nii", 
+    "./imagesTs/prostate_11.nii", 
+    "./imagesTs/prostate_03.nii", 
+    "./imagesTs/prostate_27.nii"
+  ], 
+  "training": [
+    {
+      "image": "./imagesTr/prostate_16.nii", 
+      "label": "./labelsTr/prostate_16.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_04.nii", 
+      "label": "./labelsTr/prostate_04.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_20.nii", 
+      "label": "./labelsTr/prostate_20.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_43.nii", 
+      "label": "./labelsTr/prostate_43.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_06.nii", 
+      "label": "./labelsTr/prostate_06.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_14.nii", 
+      "label": "./labelsTr/prostate_14.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_41.nii", 
+      "label": "./labelsTr/prostate_41.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_34.nii", 
+      "label": "./labelsTr/prostate_34.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_38.nii", 
+      "label": "./labelsTr/prostate_38.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_10.nii", 
+      "label": "./labelsTr/prostate_10.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_02.nii", 
+      "label": "./labelsTr/prostate_02.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_24.nii", 
+      "label": "./labelsTr/prostate_24.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_47.nii", 
+      "label": "./labelsTr/prostate_47.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_28.nii", 
+      "label": "./labelsTr/prostate_28.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_00.nii", 
+      "label": "./labelsTr/prostate_00.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_42.nii", 
+      "label": "./labelsTr/prostate_42.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_21.nii", 
+      "label": "./labelsTr/prostate_21.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_17.nii", 
+      "label": "./labelsTr/prostate_17.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_40.nii", 
+      "label": "./labelsTr/prostate_40.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_31.nii", 
+      "label": "./labelsTr/prostate_31.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_07.nii", 
+      "label": "./labelsTr/prostate_07.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_35.nii", 
+      "label": "./labelsTr/prostate_35.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_44.nii", 
+      "label": "./labelsTr/prostate_44.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_39.nii", 
+      "label": "./labelsTr/prostate_39.nii"
+    }
+  ], 
+  "validation": [
+    {
+      "image": "./imagesTr/prostate_01.nii", 
+      "label": "./labelsTr/prostate_01.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_13.nii", 
+      "label": "./labelsTr/prostate_13.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_46.nii", 
+      "label": "./labelsTr/prostate_46.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_25.nii", 
+      "label": "./labelsTr/prostate_25.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_29.nii", 
+      "label": "./labelsTr/prostate_29.nii"
+    }, 
+    {
+      "image": "./imagesTr/prostate_37.nii", 
+      "label": "./labelsTr/prostate_37.nii"
+    }
+  ]
+}
