@@ -16,6 +16,6 @@ Dependencies can be installed using:
 ### Training command
 A typical training command is as follows:
 ``` bash
-python -m torch.distributed.launch --nproc_per_node=4 --nnodes=1 --node_rank=0 --master_addr="localhost" --master_port=1234 __main__.py --amp --amp_scale --batch_size=5 --name=test_run_v1 --conv_block
+python __main__.py --batch_size=1 --opt=adamw --num_steps=45000  --lrdecay --eval_num=100 --name=${NAME} --loss_type=dice_ce --conv_block --res_block --lr=1e-4 --fold=0
 ```
 
