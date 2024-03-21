@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
+            text-align: left; /* Changed to align text to the left */
             margin: 0;
             padding: 0;
             background-color: #f0f0f0;
@@ -18,6 +18,16 @@
             background-color: #fff;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: left; /* Ensure header content aligns left */
+        }
+        .title {
+            font-size: 24px;
+        }
+        .research-by {
+            font-size: 14px;
+            color: #666;
         }
         .image-display {
             margin: 20px 0;
@@ -31,7 +41,10 @@
 <body>
 
 <div class="container">
-    <h1>Image Segmentation Tool</h1>
+    <div class="header">
+        <div class="title">HoloHisto</div>
+        <div class="research-by">Research by Nvidia and Vanderbilt</div>
+    </div>
     <p class="instructions">Select an image to begin segmentation.</p>
     <!-- Placeholder for image selection and display -->
     <div class="image-display">
