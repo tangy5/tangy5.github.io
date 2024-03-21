@@ -81,6 +81,29 @@
             font-size: 1.2em;
             line-height: 1.4;
         }
+		.hero-section {
+			/* Existing styles */
+			text-align: left; /* Align text to the left */
+			padding-left: 50px; /* Add padding to avoid text being too close to the border */
+			padding-right: 50px; /* Optional: Adjust this to ensure text doesn't touch the right border */
+		}
+
+		.hero-section h1, .hero-section p {
+			/* Existing styles */
+			width: auto; /* Adjust width as needed to control text line breaks */
+			max-width: 600px; /* Example max-width to help manage line breaks for the paragraph */
+		}
+
+		.hero-section p {
+			/* Existing styles */
+			overflow-wrap: break-word; /* Ensures text wraps to avoid overflow */
+			line-height: 1.4; /* Adjust line height as necessary to fit the design */
+			height: 7em; /* Adjust based on line height and font size to fit exactly 5 lines */
+			display: -webkit-box;
+			-webkit-line-clamp: 5; /* Number of lines you want */
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+		}
     </style>
 </head>
 <body>
