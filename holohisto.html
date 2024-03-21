@@ -18,25 +18,32 @@
             padding: 20px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         } */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-			width: 100%; /* Ensure full width */
-        }
-        .navigation {
-            list-style: none;
-            padding: 0;
-        }
-        .navigation li {
-            display: inline;
-            margin-right: 20px;
-        }
-        .navigation li a {
-            text-decoration: none;
-            color: #000;
-        }
+		.header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 10px 40px; /* Updated to add left and right padding */
+		}
+		.title, .research-by, .navigation li a {
+			margin: 0 40px; /* Add margin to the title, research by, and navigation links */
+		}
+		.navigation {
+			list-style: none;
+			padding: 0;
+			display: flex;
+			margin: 0; /* Reset default margin */
+		}
+		.navigation li {
+			display: inline;
+			margin-right: 20px; /* Adjust right margin for navigation items, except the last item */
+		}
+		.navigation li:last-child {
+			margin-right: 0; /* Remove right margin for the last navigation item */
+		}
+		.navigation li a {
+			text-decoration: none;
+			color: #000;
+		}
         .title {
             font-size: 24px;
         }
@@ -109,20 +116,20 @@
 <body>
 
 <div class="container">
-    <div class="header">
-        <div>
-            <div class="title">HoloHisto</div>
-            <div class="research-by">Research by Nvidia and Vanderbilt</div>
-        </div>
-        <ul class="navigation">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Demo</a></li>
-            <li><a href="#">Paper</a></li>
-            <li><a href="#">Datasets</a></li>
-            <li><a href="#">Github</a></li>
-        </ul>
-    </div>
-    <!-- The rest of your page content follows here -->
+	<div class="header">
+		<div>
+			<div class="title">HoloHisto</div>
+			<div class="research-by">Research by Nvidia and Vanderbilt</div>
+		</div>
+		<ul class="navigation">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Demo</a></li>
+			<li><a href="#">Paper</a></li>
+			<li><a href="#">Datasets</a></li>
+			<li><a href="#">Github</a></li>
+		</ul>
+	</div>
+	<!-- The rest of your page content follows here -->
 </div>
 
 <div class="hero-section">
