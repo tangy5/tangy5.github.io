@@ -50,16 +50,36 @@
             padding: 100px 20px;
             background-size: cover;
             background-position: center;
+            position: relative;
+        }
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            z-index: 0;
+        }
+        .hero-section h1, .hero-section p {
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6); /* Text shadow for better readability */
+            margin: 0 auto;
+            width: 80%;
+        }
+        .hero-section h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+        .hero-section p {
+            font-size: 1.2em;
+            line-height: 1.4;
         }
     </style>
 </head>
 <body>
-
-<div class="hero-section">
-    <h1>End-to-end Histopathology AI Research</h1>
-    <p>Introducing the HoloHisto: a holistic approach for precisely segmentating Whole Slide Image (WSI) with direct gigapixel image I/O.
-		</p>
-</div>
 
 <div class="container">
     <div class="header">
@@ -76,6 +96,11 @@
         </ul>
     </div>
     <!-- The rest of your page content follows here -->
+</div>
+
+<div class="hero-section">
+    <h1>End-to-end Histopathology AI Research</h1>
+    <p>Introducing the HoloHisto: a holistic approach for precisely segmentating Whole Slide Image (WSI) with direct gigapixel image I/O.</p>
 </div>
 
 </body>
