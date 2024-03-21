@@ -11,25 +11,19 @@
             padding: 0;
             background-color: #f0f0f0;
         }
-        .container {
-            width: 80%;
-            margin: auto;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
         .header {
             width: 100%;
-            background-color: #fff; /* Match the container background */
+            background-color: #fff;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px; /* Adjust padding as needed */
         }
         .navigation {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
         .navigation li {
             display: inline;
@@ -39,12 +33,12 @@
             text-decoration: none;
             color: #000;
         }
-        .title {
-            font-size: 24px;
-        }
-        .research-by {
-            font-size: 14px;
-            color: #666;
+        .container {
+            width: 80%;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         .hero-section {
             background-image: url('./images/holohisto_home.jpg');
@@ -62,13 +56,13 @@
             right: 0;
             bottom: 0;
             left: 0;
-            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            background: rgba(0, 0, 0, 0.5);
             z-index: 0;
         }
         .hero-section h1, .hero-section p {
             position: relative;
             z-index: 1;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.6); /* Text shadow for better readability */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
             margin: 0 auto;
             width: 80%;
         }
@@ -84,21 +78,20 @@
 </head>
 <body>
 
+<div class="header">
+    <div class="title">HoloHisto</div>
+    <div class="research-by">Research by Nvidia and Vanderbilt</div>
+    <ul class="navigation">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Demo</a></li>
+        <li><a href="#">Paper</a></li>
+        <li><a href="#">Datasets</a></li>
+        <li><a href="#">Github</a></li>
+    </ul>
+</div>
+
 <div class="container">
-    <div class="header">
-        <div>
-            <div class="title">HoloHisto</div>
-            <div class="research-by">Research by Nvidia and Vanderbilt</div>
-        </div>
-        <ul class="navigation">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Demo</a></li>
-            <li><a href="#">Paper</a></li>
-            <li><a href="#">Datasets</a></li>
-            <li><a href="#">Github</a></li>
-        </ul>
-    </div>
-    <!-- The rest of your page content follows here -->
+    <!-- The rest of your page content here -->
 </div>
 
 <div class="hero-section">
