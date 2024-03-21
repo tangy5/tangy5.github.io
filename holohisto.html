@@ -7,7 +7,6 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: left; /* Changed to align text to the left */
             margin: 0;
             padding: 0;
             background-color: #f0f0f0;
@@ -20,7 +19,22 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         .header {
-            text-align: left; /* Ensure header content aligns left */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+        .navigation {
+            list-style: none;
+            padding: 0;
+        }
+        .navigation li {
+            display: inline;
+            margin-right: 20px;
+        }
+        .navigation li a {
+            text-decoration: none;
+            color: #000;
         }
         .title {
             font-size: 24px;
@@ -29,34 +43,25 @@
             font-size: 14px;
             color: #666;
         }
-        .image-display {
-            margin: 20px 0;
-        }
-        .instructions {
-            color: #666;
-            margin: 10px 0;
-        }
     </style>
 </head>
 <body>
 
 <div class="container">
     <div class="header">
-        <div class="title">HoloHisto</div>
-        <div class="research-by">Research by Nvidia and Vanderbilt</div>
+        <div>
+            <div class="title">Image Segmentation Tool</div>
+            <div class="research-by">research by Nvidia and Vanderbilt</div>
+        </div>
+        <ul class="navigation">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Demo</a></li>
+            <li><a href="#">Paper</a></li>
+            <li><a href="#">Datasets</a></li>
+            <li><a href="#">Github</a></li>
+        </ul>
     </div>
-    <p class="instructions">Select an image to begin segmentation.</p>
-    <!-- Placeholder for image selection and display -->
-    <div class="image-display">
-        <img src="your-image-here.jpg" alt="Selected Image" width="500px">
-    </div>
-    <!-- Placeholder for segmentation tools and results -->
-    <div class="tools">
-        <!-- Tools and buttons for segmentation -->
-    </div>
-    <div class="segmentation-results">
-        <!-- Display segmentation results here -->
-    </div>
+    <!-- The rest of your page content follows here -->
 </div>
 
 </body>
