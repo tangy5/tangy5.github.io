@@ -130,6 +130,23 @@
 			align-items: center; /* Centers content vertically */
 			padding: 20px; /* Optional: Adds space inside the div around your content */
 		}
+		.demo-button {
+			border: 2px solid #4b689f; /* Border color */
+			border-radius: 20px; /* Rounded corners */
+			background-color: transparent; /* Transparent background, adjust as needed */
+			color: #4b689f; /* Text color, adjust as needed */
+			font-size: 16px; /* Adjust text size as needed */
+			padding: 10px 20px; /* Padding inside the button */
+			cursor: pointer; /* Changes the cursor on hover */
+			outline: none; /* Removes the outline to make it look cleaner */
+			transition: all 0.3s ease; /* Smooth transition for hover effects */
+			margin-top: 20px; /* Adds space above the button */
+		}
+
+		.demo-button:hover {
+			background-color: #4b689f; /* Color change on hover */
+			color: #ffffff; /* Text color change on hover */
+		}
     </style>
 </head>
 <body>
@@ -154,6 +171,8 @@
 <div class="hero-section">
     <h1><span style="color: #d3879a;">HoloHisto: </span><span style="color: #7a8bc3;">The End-to-End Framework for Histopathology AI Research</span></h1>
     <p style="color: #4b689f;">A holistic approach for precisely segmentating Whole Slide Image (WSI) with direct gigapixel image I/O.</p>
+	<!-- Button added below -->
+	<button class="demo-button">Kidney Slide Demo</button>
 </div>
 
 <div class="info-panel">
