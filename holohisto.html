@@ -133,19 +133,22 @@
 		.demo-button {
 			border: 2px solid #4b689f; /* Border color */
 			border-radius: 20px; /* Rounded corners */
-			background-color: transparent; /* Transparent background, adjust as needed */
-			color: #4b689f; /* Text color, adjust as needed */
-			font-size: 16px; /* Adjust text size as needed */
-			padding: 10px 20px; /* Padding inside the button */
-			cursor: pointer; /* Changes the cursor on hover */
-			outline: none; /* Removes the outline to make it look cleaner */
-			transition: all 0.3s ease; /* Smooth transition for hover effects */
-			margin-top: 20px; /* Adds space above the button */
+			background-color: transparent; /* Transparent background */
+			color: #4b689f; /* Text color */
+			font-size: 16px; /* Text size */
+			padding: 10px 20px; /* Padding inside */
+			cursor: pointer; /* Cursor style */
+			outline: none; /* Remove outline */
+			transition: all 0.3s ease; /* Transition for hover effects */
+			margin-top: 10px; /* Reduced top margin to bring the button closer */
+			display: inline-block; /* Ensures the link behaves like a button */
+			text-align: center; /* Center the text inside the link */
+			text-decoration: none; /* Remove underline from the link */
 		}
 
 		.demo-button:hover {
-			background-color: #4b689f; /* Color change on hover */
-			color: #ffffff; /* Text color change on hover */
+			background-color: #4b689f; /* Background color on hover */
+			color: white; /* Text color on hover */
 		}
     </style>
 </head>
@@ -175,8 +178,8 @@
         <div><span style="color: #7a8bc3;">Histopathology AI Research</span></div>
     </h1>
     <p style="color: #4b689f;">A holistic approach for precisely segmentating Whole Slide Image (WSI) with direct gigapixel image I/O.</p>
-    <!-- Button as previously described -->
-    <button class="demo-button">Kidney Slide Demo</button>
+    <!-- Converted button to a link -->
+    <a href="#" class="demo-button">Kidney Slide Demo</a> <!-- Replace '#' with your actual URL -->
 </div>
 
 
