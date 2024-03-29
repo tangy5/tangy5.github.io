@@ -11,16 +11,13 @@
             padding: 0;
             background-color: #ffffff;
         }
-        .container {
-            max-width: 1200px; /* Set a maximum width for the container */
-            margin: auto; /* Center the container */
+        /* .container {
+            width: 100%;
+            margin: auto;
+            background-color: #fff;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .header, .hero-section, .info-panel, .footer {
-            width: 100%; /* Ensure these elements always take up 100% of the container's width */
-            box-sizing: border-box; /* Include padding in the element's total width */
-        }
+        } */
 		.header {
 			display: flex;
 			justify-content: space-between;
@@ -174,7 +171,7 @@
 </head>
 <body>
 
-<div class="container">
+<!-- <div class="container"> -->
 	<div class="header">
 		<div>
 			<div class="title">HoloHisto</div>
@@ -189,56 +186,56 @@
 		</ul>
 	</div>
 	<!-- The rest of your page content follows here -->
+<!-- </div> -->
 
-	<div class="hero-section" style="display: flex; align-items: center; justify-content: space-around;">
-		<div class="hero-text" style="flex: 1; padding-right: 20px;"> <!-- Adjust padding as needed -->
-			<h1>
-				<div><span style="color: #d3879a;">HoloHisto </span><span style="color: #7a8bc3;">The End-to-End</span></div>
-				<div><span style="color: #7a8bc3;">Framework for Microscopy</span></div>
-				<div><span style="color: #7a8bc3;">Histopathology AI Research</span></div>
-			</h1>
-			<p style="color: #4b689f;">A holistic approach for precisely segmentating Whole Slide Image (WSI) with direct gigapixel image I/O.
-				<a href="#" class="demo-button">Kidney Slide Demo</a> <!-- Replace '#' with your actual URL -->
-			</p>
-		</div>
+<div class="hero-section" style="display: flex; align-items: center; justify-content: space-around;">
+    <div class="hero-text" style="flex: 1; padding-right: 20px;"> <!-- Adjust padding as needed -->
+        <h1>
+            <div><span style="color: #d3879a;">HoloHisto </span><span style="color: #7a8bc3;">The End-to-End</span></div>
+            <div><span style="color: #7a8bc3;">Framework for Microscopy</span></div>
+            <div><span style="color: #7a8bc3;">Histopathology AI Research</span></div>
+        </h1>
+        <p style="color: #4b689f;">A holistic approach for precisely segmentating Whole Slide Image (WSI) with direct gigapixel image I/O.
+            <a href="#" class="demo-button">Kidney Slide Demo</a> <!-- Replace '#' with your actual URL -->
+        </p>
+    </div>
 
-		<div class="hero-image" style="flex: 1; text-align: left;"> <!-- Adjust flex basis if needed -->
-			<img src="./images/home_teaser_2.png" alt="Kidney Slide Illustration" style="width: 100%; height: auto; max-width: 600px;"> <!-- Adjust max-width as needed -->
-		</div>
-	</div>
+    <div class="hero-image" style="flex: 1; text-align: left;"> <!-- Adjust flex basis if needed -->
+        <img src="./images/home_teaser_2.png" alt="Kidney Slide Illustration" style="width: 100%; height: auto; max-width: 600px;"> <!-- Adjust max-width as needed -->
+    </div>
+</div>
 
 
-	<div class="info-panel">
-		<!-- Your content here -->
-	</div>
+<div class="info-panel">
+    <!-- Your content here -->
+</div>
 
-	<div class="footer" style="background-color: #e6f3f7; width: 100%; margin: 0 0px; padding-top: 40px; display: flex; justify-content: space-between;">
-		<!-- <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-			<h2 style="margin: 0;">Acknowledgements</h2>
-		</div> -->
-		<div style="flex: 1; padding-right: 20px; text-align: center; display: flex; flex-direction: column;">
-			<div style="flex: 2;">
-				<p><strong>Research Authors:</strong></p>
-				<!-- <p style="margin-left: 40px;">
-					Yucheng Tang<sup>*,1,2</sup>, Yufan He<sup>1</sup>, Vishwesh Nath<sup>1</sup>, Pengfeig Guo<sup>1</sup>,
-					Ruining Deng<sup>2</sup>, Tianyuan Yao<sup>2</sup>, Quan Liu<sup>2</sup>, Can Cui<sup>2</sup>,
-					Mengmeng Yin<sup>3</sup>, Ziyue Xu<sup>1</sup>, Holger Roth<sup>1</sup>, Daguang Xu<sup>1</sup>,
-					Haichun Yang<sup>3</sup>, Yuankai Huo<sup>2,3</sup>
-				</p> -->
-				<!-- <p style="font-size: 0.9em;">
-					<span class="superscript">1</span>Nvidia, 
-					<span class="superscript">2</span>Vanderbilt University, 
-					<span class="superscript">3</span>Vanderbilt University Medical Center, 
-					<span class="superscript">*</span>Project Lead
-				</p> -->
-			</div>
-		</div>
-		<div style="width: 2px; background-color: #000; margin: 0 20px;"></div>
-		<div style="flex: 1; text-align: center;">
-			<p><strong>Project Contributions:</strong></p>
-			<p>Datasets</p>
-		</div>
-	</div>
+<div class="container" style="background-color: #e6f3f7; width: 100%; margin: 0 0px; padding-top: 40px; display: flex; justify-content: space-between;">
+	<!-- <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+		<h2 style="margin: 0;">Acknowledgements</h2>
+	</div> -->
+	<div style="flex: 1; padding-right: 20px; text-align: center; display: flex; flex-direction: column;">
+        <div style="flex: 2;">
+            <p><strong>Research Authors:</strong></p>
+			<!-- <p style="margin-left: 40px;">
+				Yucheng Tang<sup>*,1,2</sup>, Yufan He<sup>1</sup>, Vishwesh Nath<sup>1</sup>, Pengfeig Guo<sup>1</sup>,
+				Ruining Deng<sup>2</sup>, Tianyuan Yao<sup>2</sup>, Quan Liu<sup>2</sup>, Can Cui<sup>2</sup>,
+				Mengmeng Yin<sup>3</sup>, Ziyue Xu<sup>1</sup>, Holger Roth<sup>1</sup>, Daguang Xu<sup>1</sup>,
+				Haichun Yang<sup>3</sup>, Yuankai Huo<sup>2,3</sup>
+			</p> -->
+			<!-- <p style="font-size: 0.9em;">
+				<span class="superscript">1</span>Nvidia, 
+				<span class="superscript">2</span>Vanderbilt University, 
+				<span class="superscript">3</span>Vanderbilt University Medical Center, 
+				<span class="superscript">*</span>Project Lead
+			</p> -->
+        </div>
+    </div>
+    <div style="width: 2px; background-color: #000; margin: 0 20px;"></div>
+    <div style="flex: 1; text-align: center;">
+        <p><strong>Project Contributions:</strong></p>
+        <p>Datasets</p>
+    </div>
 </div>
 
 
