@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NVIDIA / VISTA-3D NIM</title>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
+          integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+          crossorigin="anonymous"></script>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/css/selectize.default.min.css"
+    integrity="sha512-pTaEn+6gF1IeWv3W1+7X7eM60TFu/agjgoHmYhAfLEU8Phuf6JKiiE8YmsNC0aCgQv4192s4Vai8YZ6VNM6vyQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/js/selectize.min.js"
+    integrity="sha512-IOebNkvA/HZjMM7MxL0NYeLYEalloZ8ckak+NDtOViP7oiYzG5vn6WVXyrJDiJPhl4yRdmNAG49iuLmhkUdVsQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-tagsinput@0.7.1/dist/bootstrap-tagsinput.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-tagsinput@0.7.1/dist/bootstrap-tagsinput.min.css" rel="stylesheet">
+
+  <style>
+      body {
+          background-color: #111827;
+          color: #f9fafb;
+          font-family: "Open Sans", sans-serif;
+      }
+
+      input, select {
+          color: black;
+          padding: 0.5rem;
+          border: 1px solid #ccc;
+          border-radius: 0.25rem;
+      }
+
+      button {
+          background-color: #76b900;
+          color: #f9fafb;
+          font-weight: bold;
+          padding: 0.5rem 1rem;
+          border-radius: 0.25rem;
+          cursor: pointer;
+      }
+
+      button:hover {
+          background-color: rgb(152, 228, 91);
+      }
+
+      button:disabled {
+          background-color: grey !important;
+      }
+
+      .card {
+          background: rgba(0, 0, 0, 0.5);
+          border-radius: 10px;
+          padding: 20px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .card2 {
+          background: white;
+          border-radius: 10px;
+          padding: 20px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+          color: black;
+          font-family: "Open Sans", sans-serif;
+      }
+
+      h1 {
+          font-size: 24px;
+          margin-bottom: 10px;
+      }
+
+      h1 span {
+          color: #76B900; /* Green color for 'vista-3d' */
+      }
+
+      .tags {
+          margin: 10px 0 0 0;
+      }
+
+      .tag {
+          background-color: lightblue;
+          border-radius: 10px;
+          padding: 5px 15px;
+          font-size: 12px;
+          margin-right: 10px;
+          display: inline-block;
+          color: black;
+      }
+
+      .tag_list_wrapper {
+          margin: 10px 0 0 0;
+          color: gray;
+          font-size: smaller;
+      }
+
+      .tag_head {
+          color: gray;
+          font-size: smaller;
+      }
+
+      .tag_list {
+          font-size: 12px;
+          display: inline-block;
+          vertical-align: top;
+          background-color: lightgray;
+          border-radius: 10px;
+          margin-right: 10px;
+          margin-bottom: 5px;
+          padding: 5px 20px;
+          position: relative;
+          color: black;
+      }
+
+      .tag_list.tag_list_hide {
+          display: none;
+      }
+
+      .tag_list span {
+          position: absolute;
+          right: 6px;
+          cursor: pointer;
+          color: white;
+          font-weight: bolder;
+      }
+
+      p {
+          font-size: 14px;
+          line-height: 1.5;
+      }
+
+      .box {
+          border: 1px solid lightgray;
+      }
+
+      .mytable {
+          border: 0;
+          border-spacing: 0;
+          padding: 0;
+          font-family: monospace;
+      }
+
+      #runNIM {
+          float: right;
+          background-color: #76b900; /* Green background */
+          color: black; /* White text */
+          padding: 10px 20px; /* Padding for the button */
+          border: none; /* No border */
+          border-radius: 5px; /* Rounded corners */
+          cursor: pointer; /* Pointer cursor on hover */
+          font-size: 14px; /* Larger font size for better readability */
+      }
+
+      .ba {
+          font-family: arial, sans-serif;
+          font-size: small;
+          color: darkgreen;
+      }
+
+      .ba:visited {
+          color: darkgreen;
+      }
+
+      .ba:hover {
+          color: darkgreen;
+      }
+
+      .ba:active {
+          color: darkgreen;
+      }
+
+      .bootstrap-tagsinput {
+          border: none;
+          box-shadow: none;
+      }
+
+  </style>
+<script defer src="vista3dNIM.js"></script></head>
+<body>
+<div id="demo-title-container">
+  <div class="card">
+    <h1><span>NVIDIA</span> / VISTA-3D NIM</h1>
+    <p>VISTA-3D is a specialized interactive foundation model for 3D medical imaging. It excels in providing accurate
+      and adaptable segmentation analysis across anatomies and modalities. Utilizing a multi-head architecture, VISTA-3D
+      adapts to varying conditions and anatomical areas, helping guide users' annotation workflow. This model is for
+      research purposes and not for clinical usage.
+    </p>
+    <div class="tags">
+      <span class="tag">image segmentation</span>
+      <span class="tag">interactive annotation</span>
+      <span class="tag">medical imaging</span>
+    </div>
+  </div>
+</div>
+<br />
+<div class="row" style="margin: 5px">
+  <div class="col-md-3 card2" style="height: 830px">
+    <form action="javascript:void(0);">
+      <div class="form-group">
+        <label for="imageURI">Image URI</label>
+        <!--        <input type="url" class="form-control" id="imageURI" value="http://10.117.3.221:3001/example-1.nii.gz">-->
+        <input type="url" class="form-control" id="imageURI"
+               value="https://assets.ngc.nvidia.com/products/api-catalog/vista3d/example-1.nii.gz">
+        <button class="btn-xs" style="width: 100%" id="loadImage">Load Image</button>
+      </div>
+      <hr />
+      <div class="form-group">
+        <label for="nimsURI">NIMS Endpoint</label>
+        <!--        <input type="url" class="form-control" id="nimsURI" value="http://10.117.3.221:8008/vista3d/inference">-->
+        <input type="url" class="form-control" id="nimsURI"
+               value="https://health.api.nvidia.com/v1/medicalimaging/nvidia/vista-3d">
+      </div>
+      <div class="form-group">
+        <label for="nimsAuthHeader">Auth Header</label>
+        <input type="text" class="form-control" id="nimsAuthHeader" value="" placeholder="Bearer <api_key>">
+      </div>
+      <hr />
+    </form>
+    <table class="mytable" style="width: 100%;">
+      <tr>
+        <td style="vertical-align: top;">
+          <div class="form-group">
+            <label for="clickPrompts">Labels</label>
+            <select id="clickPrompts">
+              <option value="">-- select --</option>
+              <option value="liver">liver</option>
+              <!--              <option value="kidney">kidney</option>-->
+              <option value="spleen">spleen</option>
+              <option value="pancreas">pancreas</option>
+              <option value="right kidney">right kidney</option>
+              <option value="aorta">aorta</option>
+              <option value="inferior vena cava">inferior vena cava</option>
+              <option value="right adrenal gland">right adrenal gland</option>
+              <option value="left adrenal gland">left adrenal gland</option>
+              <option value="gallbladder">gallbladder</option>
+              <option value="esophagus">esophagus</option>
+              <option value="stomach">stomach</option>
+              <option value="duodenum">duodenum</option>
+              <option value="left kidney">left kidney</option>
+              <option value="bladder">bladder</option>
+              <option value="portal vein and splenic vein">portal vein and splenic vein</option>
+              <option value="small bowel">small bowel</option>
+              <!--              <option value="lung">lung</option>-->
+              <!--              <option value="bone">bone</option>-->
+              <option value="brain">brain</option>
+              <option value="lung tumor">lung tumor</option>
+              <option value="pancreatic tumor">pancreatic tumor</option>
+              <option value="hepatic vessel">hepatic vessel</option>
+              <option value="hepatic tumor">hepatic tumor</option>
+              <option value="colon cancer primaries">colon cancer primaries</option>
+              <option value="left lung upper lobe">left lung upper lobe</option>
+              <option value="left lung lower lobe">left lung lower lobe</option>
+              <option value="right lung upper lobe">right lung upper lobe</option>
+              <option value="right lung middle lobe">right lung middle lobe</option>
+              <option value="right lung lower lobe">right lung lower lobe</option>
+              <option value="vertebrae L5">vertebrae L5</option>
+              <option value="vertebrae L4">vertebrae L4</option>
+              <option value="vertebrae L3">vertebrae L3</option>
+              <option value="vertebrae L2">vertebrae L2</option>
+              <option value="vertebrae L1">vertebrae L1</option>
+              <option value="vertebrae T12">vertebrae T12</option>
+              <option value="vertebrae T11">vertebrae T11</option>
+              <option value="vertebrae T10">vertebrae T10</option>
+              <option value="vertebrae T9">vertebrae T9</option>
+              <option value="vertebrae T8">vertebrae T8</option>
+              <option value="vertebrae T7">vertebrae T7</option>
+              <option value="vertebrae T6">vertebrae T6</option>
+              <option value="vertebrae T5">vertebrae T5</option>
+              <option value="vertebrae T4">vertebrae T4</option>
+              <option value="vertebrae T3">vertebrae T3</option>
+              <option value="vertebrae T2">vertebrae T2</option>
+              <option value="vertebrae T1">vertebrae T1</option>
+              <option value="vertebrae C7">vertebrae C7</option>
+              <option value="vertebrae C6">vertebrae C6</option>
+              <option value="vertebrae C5">vertebrae C5</option>
+              <option value="vertebrae C4">vertebrae C4</option>
+              <option value="vertebrae C3">vertebrae C3</option>
+              <option value="vertebrae C2">vertebrae C2</option>
+              <option value="vertebrae C1">vertebrae C1</option>
+              <option value="trachea">trachea</option>
+              <option value="left iliac artery">left iliac artery</option>
+              <option value="right iliac artery">right iliac artery</option>
+              <option value="left iliac vena">left iliac vena</option>
+              <option value="right iliac vena">right iliac vena</option>
+              <option value="colon">colon</option>
+              <option value="left rib 1">left rib 1</option>
+              <option value="left rib 2">left rib 2</option>
+              <option value="left rib 3">left rib 3</option>
+              <option value="left rib 4">left rib 4</option>
+              <option value="left rib 5">left rib 5</option>
+              <option value="left rib 6">left rib 6</option>
+              <option value="left rib 7">left rib 7</option>
+              <option value="left rib 8">left rib 8</option>
+              <option value="left rib 9">left rib 9</option>
+              <option value="left rib 10">left rib 10</option>
+              <option value="left rib 11">left rib 11</option>
+              <option value="left rib 12">left rib 12</option>
+              <option value="right rib 1">right rib 1</option>
+              <option value="right rib 2">right rib 2</option>
+              <option value="right rib 3">right rib 3</option>
+              <option value="right rib 4">right rib 4</option>
+              <option value="right rib 5">right rib 5</option>
+              <option value="right rib 6">right rib 6</option>
+              <option value="right rib 7">right rib 7</option>
+              <option value="right rib 8">right rib 8</option>
+              <option value="right rib 9">right rib 9</option>
+              <option value="right rib 10">right rib 10</option>
+              <option value="right rib 11">right rib 11</option>
+              <option value="right rib 12">right rib 12</option>
+              <option value="left humerus">left humerus</option>
+              <option value="right humerus">right humerus</option>
+              <option value="left scapula">left scapula</option>
+              <option value="right scapula">right scapula</option>
+              <option value="left clavicula">left clavicula</option>
+              <option value="right clavicula">right clavicula</option>
+              <option value="left femur">left femur</option>
+              <option value="right femur">right femur</option>
+              <option value="left hip">left hip</option>
+              <option value="right hip">right hip</option>
+              <option value="sacrum">sacrum</option>
+              <option value="left gluteus maximus">left gluteus maximus</option>
+              <option value="right gluteus maximus">right gluteus maximus</option>
+              <option value="left gluteus medius">left gluteus medius</option>
+              <option value="right gluteus medius">right gluteus medius</option>
+              <option value="left gluteus minimus">left gluteus minimus</option>
+              <option value="right gluteus minimus">right gluteus minimus</option>
+              <option value="left autochthon">left autochthon</option>
+              <option value="right autochthon">right autochthon</option>
+              <option value="left iliopsoas">left iliopsoas</option>
+              <option value="right iliopsoas">right iliopsoas</option>
+              <option value="left atrial appendage">left atrial appendage</option>
+              <option value="brachiocephalic trunk">brachiocephalic trunk</option>
+              <option value="left brachiocephalic vein">left brachiocephalic vein</option>
+              <option value="right brachiocephalic vein">right brachiocephalic vein</option>
+              <option value="left common carotid artery">left common carotid artery</option>
+              <option value="right common carotid artery">right common carotid artery</option>
+              <option value="costal cartilages">costal cartilages</option>
+              <option value="heart">heart</option>
+              <option value="left kidney cyst">left kidney cyst</option>
+              <option value="right kidney cyst">right kidney cyst</option>
+              <option value="prostate">prostate</option>
+              <option value="pulmonary vein">pulmonary vein</option>
+              <option value="skull">skull</option>
+              <option value="spinal cord">spinal cord</option>
+              <option value="sternum">sternum</option>
+              <option value="left subclavian artery">left subclavian artery</option>
+              <option value="right subclavian artery">right subclavian artery</option>
+              <option value="superior vena cava">superior vena cava</option>
+              <option value="thyroid gland">thyroid gland</option>
+              <option value="vertebrae S1">vertebrae S1</option>
+              <option value="bone lesion">bone lesion</option>
+              <option value="airway">airway</option>
+            </select>
+            <br />
+            <span style="float: right; font-size: smaller; font-family: sans-serif;">Click Prompts:&nbsp;&nbsp;
+                <a class="ba" id="clearClicks" href="javascript:void(0);" style="color: gray">Clear</a> |
+                <a class="ba" id="clearAllClicks" href="javascript:void(0);">Clear All</a>
+                </span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="float: right">
+          <br />
+          <!--          <div class="form-check form-switch">-->
+          <!--            <input class="form-check-input" type="checkbox" id="autoRunChecked" checked>-->
+          <!--            <label class="form-check-label" for="autoRunChecked">Auto Run</label>-->
+          <!--          </div>-->
+          <button id="runNIM" disabled>Run NIM</button>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center">
+          <br />
+          <p class="bg-warning" id="runStatus" style="display: none">Please wait while running NIM...</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="tag_head" id="annotatedTagsHead" style="display: none">
+            <span>Annotated Labels</span><br />
+            <div class="tag_list_wrapper" id="annotatedTags">
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="col-md-9">
+    <progress class="progress-bar" max="100" style="width: 1170px; height: 4px; margin-bottom: 1px;"></progress>
+    <table class="mytable">
+      <tr>
+        <td rowspan="2" class="box">
+          <span style="color: darkgray; padding-left: 5px;" id="l_element1"></span>
+          <div id="element1" oncontextmenu="return false" style="height: 780px; width: 780px;"></div>
+        </td>
+        <td class="box">
+          <span style="color: darkgray; padding-left: 5px;" id="l_element2"></span>
+          <div id="element2" oncontextmenu="return false" style="height: 390px; width: 390px;"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="box">
+          <span style="color: darkgray; padding-left: 5px;" id="l_element3"></span>
+          <div id="element3" oncontextmenu="return false" style="height: 390px; width: 390px;"></div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<script>
+  $('#clickPrompts').selectize();
+</script>
+</body>
+</html>
